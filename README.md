@@ -26,11 +26,15 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
-        This week we learned about express router and express middleware.
+      This week we learned about express routing and middleware.
 
 - [ ] Describe Middleware?
 
+    Middleware is an extra layer that allows extra functions to be run on our requests on top of that which Express is already able to do. The data travels through middleware before traveling to a request.  Calling next() allows the middleware to continue down the chain. 
+
 - [ ] Describe a Resource?
+
+   A Resource is a point managed by out API
 
 - [ ] What can the API return to help clients know if a request was successful?
 
@@ -80,7 +84,7 @@ The `projectModel.js` helper includes an extra method called `getProjectActions(
 Design and build the necessary endpoints to:
 
 - [done] Perform CRUD operations on _projects_ and _actions_. When adding an action, make sure the `project_id` provided belongs to an existing `project`. If you try to add an action with an `id` of 3 and there is no project with that `id` the database will return an error.
-- [ ] Retrieve the list of actions for a project.
+- [done] Retrieve the list of actions for a project.
 
 ### Database Schemas
 

@@ -17,15 +17,24 @@ router.get('/', (req, res) => {
         })
 });
 
-router.get('/:id', (req,res) => {
-    projectsDb.get(req.params.id)
-        .then(project => {
-            res.status(200).json({project})
-        })
-        .catch(err => {
-            res.status(404).json({message: `project of id: ${req.params.id} not found`});
-        })
-});
+router.get("/:id", (req, res) => {
+    const id = req.params.id;
+  
+    projectsDb
+      .get(id)
+      .then(project => {
+        if (project) {
+          res.status(200).json({ project });
+        } else {
+          res
+            .status(404)
+            .json({ error: "Specified project ID could not be found" });
+        }
+      })
+      .catch(err => {
+        res.status(404).json({ error: "Error performing that project" });
+      });
+  });
 
 router.post('/',(req,res) => {
     projectsDb.insert(req.body)
@@ -45,17 +54,30 @@ router.put('/:id', (req,res) => {
         .catch(err => {
             res.status(500).json({message: `error encountered updating project of id ${req.params.id}`})
         })
-})
+});
 
-router.delete('/:id',(req,res) => {
-    projectsDb.remove(req.params.id)
-        .then(count => {
-            res.status(200).json({message: `project of id ${req.params.id} successfully removed`})
+router.delete("/:id", (req, res) => {
+    const id = req.params.id;
+  
+    if (id) {
+      projectsDb
+        .remove(id)
+        .then(result => {
+          if (result !== 0) {
+            res.status(200).json({ result });
+          } else {
+            res.status(404).json({ error: "project ID does not exist" });
+          }
         })
         .catch(err => {
-            res.status(500).json({message: `error encountered in trying to remove project...`})
-        })
-})
+          res
+            .status(500)
+            .json({ error: "Deleting project could not be performed, try again" });
+        });
+    } else {
+      res.status(404).json({ error: "Provide project ID for removal" });
+    }
+  });
 
 
 module.exports = router;
