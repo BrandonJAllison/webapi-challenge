@@ -7,9 +7,6 @@ const morgan = require('morgan');
 const projectsRouter = require('./Routes/projects.js');
 const actionsRouter = require('./Routes/actions.js');
 
-
-
-
 //middleware
 server.use(cors());
 server.use(helmet());
