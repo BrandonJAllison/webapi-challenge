@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "5e7b5ccd-b9f9-4e3b-82a0-10bbfc3db651",
+		"name": "Web-api-challenge-1",
+		"description": "endpoints @:\napi/actions\napi/projects",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Actions",
+			"item": [
+				{
+					"name": "GET actions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4000/api/actions",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"actions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST action",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n           \"project_id\": 1,\n            \"description\": \"Test Add\",\n            \"notes\": \"Test Add\"\n            \n}"
+						},
+						"url": {
+							"raw": "localhost:4000/api/actions",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"actions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT action",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n           \"project_id\": 1,\n            \"description\": \"Testing Add\",\n            \"notes\": \"Test Add\"\n            \n}"
+						},
+						"url": {
+							"raw": "localhost:4000/api/actions/4",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"actions",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE action",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n        \t\"name\": \"testing\",\n            \"description\": \"Testing Add trying to make this project description tooooo long so that it has an issue and kicks it back to me we will see how this works but I am confident \"\n            \n            \n}"
+						},
+						"url": {
+							"raw": "localhost:4000/api/action/4",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"action",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET actions by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4000/api/actions/3",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"actions",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "GET Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4000/api/projects",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST to projects",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n            \"name\": \"Test Project\",\n            \"description\": \"Testing project post endpoint\"\n            \n}"
+						},
+						"url": {
+							"raw": "localhost:4000/api/projects",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT to projects",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n            \"name\": \"Testing Project\",\n            \"description\": \"Testing project post endpoint\"\n            \n}"
+						},
+						"url": {
+							"raw": "localhost:4000/api/projects/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"projects",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE project",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n            \"name\": \"Testing Project\",\n            \"description\": \"Testing project post endpoint\"\n            \n}"
+						},
+						"url": {
+							"raw": "localhost:4000/api/projects/2",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"projects",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET projects by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4000/api/projects/1",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"projects",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET server ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000",
+					"host": [
+						"localhost"
+					],
+					"port": "4000"
+				}
+			},
+			"response": []
+		}
+	]
+}
